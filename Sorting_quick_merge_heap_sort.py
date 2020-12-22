@@ -131,25 +131,27 @@ def check_sorted(A):
 
 n = int(input())
 random.seed()
-A = []
-for i in range(n):
-    A.append(random.randint(-1000, 1000))
+A = [38, 27, 43, 3, 9, 82, 10]
+# for i in range(n):
+#     A.append(random.randint(-1000, 1000))
 B = A[:]
 C = A[:]
-print("n =", n)
-print("")
-print("Quick sort:")
-print("time =", timeit.timeit("quick_sort(A, 0, n-1)", globals=globals(), number=1))
-print("  comparisons = {:10d}, swaps = {:10d}\n".format(Qc, Qs))
-print("Merge sort:")
-print("time =", timeit.timeit("merge_sort(B, 0, n-1)", globals=globals(), number=1))
-print("  comparisons = {:10d}, swaps = {:10d}\n".format(Mc, Ms))
 
-print("Heap sort:")
-print("time =", timeit.timeit("heap_sort(C)", globals=globals(), number=1))
-print("  comparisons = {:10d}, swaps = {:10d}\n".format(Hc, Hs))
+merge_sort(A, 0, n-1)
+# print("n =", n)
+# print("")
+# print("Quick sort:")
+# print("time =", timeit.timeit("quick_sort(A, 0, n-1)", globals=globals(), number=1))
+# print("  comparisons = {:10d}, swaps = {:10d}\n".format(Qc, Qs))
+# print("Merge sort:")
+# print("time =", timeit.timeit("merge_sort(B, 0, n-1)", globals=globals(), number=1))
+# print("  comparisons = {:10d}, swaps = {:10d}\n".format(Mc, Ms))
 
-# 진짜 정렬되었는지 check한다. 정렬이 되지 않았다면, assert 함수가 fail됨!
-assert (check_sorted(A))
-assert (check_sorted(B))
-assert (check_sorted(C))
+# print("Heap sort:")
+# print("time =", timeit.timeit("heap_sort(C)", globals=globals(), number=1))
+# print("  comparisons = {:10d}, swaps = {:10d}\n".format(Hc, Hs))
+
+# # 진짜 정렬되었는지 check한다. 정렬이 되지 않았다면, assert 함수가 fail됨!
+# assert (check_sorted(A))
+# assert (check_sorted(B))
+# assert (check_sorted(C))
